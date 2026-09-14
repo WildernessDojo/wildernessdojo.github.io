@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#02030c">
+  <meta name="description" content="StarLens — a cinematic celestial navigation and light-language observatory.">
+  <title>StarLens — Celestial Observatory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+:root{--ink:#f4f8ff;--muted:#8f9aad;--cyan:#6be8ff;--violet:#9a70ff;--line:rgba(173,218,255,.16);--glass:rgba(8,12,28,.56);--hue:192}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#02030c;color:var(--ink);font-family:Inter,sans-serif;overflow-x:hidden}button,a{font:inherit}button{color:inherit}a{color:inherit;text-decoration:none}#cosmos,.aurora,.noise,.vignette{position:fixed;inset:0;pointer-events:none}#cosmos{z-index:-5}.aurora{z-index:-4;background:radial-gradient(ellipse at 73% 25%,hsla(var(--hue),90%,55%,.14),transparent 28%),radial-gradient(ellipse at 20% 80%,rgba(105,42,231,.1),transparent 35%);filter:blur(16px);transition:background 1s}.noise{z-index:10;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}.vignette{z-index:-1;background:radial-gradient(circle,transparent 35%,rgba(0,0,8,.72) 120%)}.glass{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}.topbar{position:fixed;z-index:20;top:18px;left:3vw;right:3vw;height:64px;border-radius:4px;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 22px}.brand{display:flex;align-items:center;gap:12px;font-family:"Space Grotesk";font-weight:600;letter-spacing:.18em;font-size:14px}.brand>span>span{font-weight:300;color:var(--cyan)}.brand-mark{width:25px;height:25px;position:relative;display:block;border:1px solid rgba(107,232,255,.6);border-radius:50%}.brand-mark i:first-child{position:absolute;width:33px;height:9px;border:1px solid var(--cyan);border-radius:50%;top:7px;left:-5px;transform:rotate(-25deg)}.brand-mark i:last-child{position:absolute;width:3px;height:3px;background:white;box-shadow:0 0 8px white;border-radius:50%;top:10px;left:10px}.topbar nav{display:flex;gap:36px}.topbar nav a{font-size:11px;letter-spacing:.13em;color:#aeb7c7;transition:.2s}.topbar nav a:hover{color:white}.status-pill{border:0;background:transparent;font-size:10px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.status-pill span{display:inline-block;width:6px;height:6px;background:#54e59f;border-radius:50%;box-shadow:0 0 10px #54e59f;margin-right:7px}.hero{min-height:100svh;position:relative;padding:170px 7vw 90px;display:flex;flex-direction:column;justify-content:center}.eyebrow,.kicker{font-size:10px;letter-spacing:.28em;color:var(--cyan)}.eyebrow span{display:inline-block;width:28px;height:1px;background:var(--cyan);vertical-align:middle;margin-right:10px;box-shadow:0 0 10px var(--cyan)}h1{position:relative;z-index:2;font:500 clamp(48px,7.5vw,118px)/.89 "Space Grotesk";letter-spacing:-.055em;margin:24px 0;max-width:1050px}h1 em,h2 em{font-weight:300;color:transparent;-webkit-text-stroke:1px rgba(225,239,255,.68);font-style:normal}.hero-copy{position:relative;z-index:2;color:#a5afbe;line-height:1.8;max-width:520px;font-size:14px}.hero-actions{display:flex;gap:12px;margin-top:24px;position:relative;z-index:3}.primary,.ghost{height:52px;padding:0 22px;border:1px solid var(--line);background:rgba(5,10,24,.6);font-size:10px;letter-spacing:.18em;cursor:pointer;transition:.3s}.primary{background:var(--ink);color:#06101b;border-color:white}.primary:hover{box-shadow:0 0 38px rgba(107,232,255,.35);transform:translateY(-2px)}.primary span{margin-left:24px}.ghost:hover{border-color:var(--cyan);background:rgba(107,232,255,.08)}.play{color:var(--cyan);font-size:9px;margin-right:12px}.lens-wrap{position:absolute;width:min(56vw,690px);aspect-ratio:1;right:-2vw;top:12%;display:grid;place-items:center}.lens{width:67%;height:67%;border-radius:50%;position:relative;overflow:hidden;border:1px solid rgba(148,225,255,.36);box-shadow:inset 0 0 60px rgba(29,135,181,.13),0 0 80px rgba(47,126,183,.08);transform-style:preserve-3d}.lens:before,.lens:after{content:"";position:absolute;inset:5%;border:1px solid rgba(255,255,255,.1);border-radius:50%}.lens:after{inset:18%;border-style:dashed;animation:spin 22s linear infinite}.lens-grid{position:absolute;inset:0;background:linear-gradient(transparent 49.8%,rgba(107,232,255,.15) 50%,transparent 50.2%),linear-gradient(90deg,transparent 49.8%,rgba(107,232,255,.15) 50%,transparent 50.2%)}.planet{position:absolute;width:38%;height:38%;left:31%;top:31%;border-radius:50%;background:radial-gradient(circle at 35% 28%,#bffcff 0,#51b4d6 12%,#176b8d 35%,#061a37 69%,#010611 100%);box-shadow:-18px 9px 30px #000,0 0 45px hsla(var(--hue),100%,70%,.25);transition:filter 1s,background 1s;animation:float 7s ease-in-out infinite}.planet:before{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(ellipse at 30% 40%,transparent 0 12px,rgba(255,255,255,.08) 14px 16px);mix-blend-mode:overlay}.planet-shade{position:absolute;inset:-2px;border-radius:50%;background:linear-gradient(90deg,transparent 25%,rgba(0,0,0,.76) 88%)}.object-glow{position:absolute;width:55%;height:55%;left:22%;top:22%;border-radius:50%;background:hsla(var(--hue),100%,60%,.1);filter:blur(28px);animation:pulse 4s infinite}.reticle{position:absolute;inset:0;z-index:3}.reticle span{position:absolute;background:rgba(185,244,255,.65)}.reticle span:first-child{width:12%;height:1px;left:44%;top:50%}.reticle span:nth-child(2){width:1px;height:12%;left:50%;top:44%}.reticle b{position:absolute;width:18px;height:18px;border:1px solid var(--cyan);left:calc(50% - 9px);top:calc(50% - 9px);transform:rotate(45deg);box-shadow:0 0 16px rgba(107,232,255,.55)}.scanline{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);box-shadow:0 0 15px var(--cyan);animation:scan 5s ease-in-out infinite}.lens-label,.target-lock{position:absolute;z-index:4;font:8px "Space Grotesk";letter-spacing:.18em;color:rgba(210,244,255,.72)}.label-n{top:7%;left:44%}.label-e{right:6%;top:49%}.label-s{bottom:8%;left:43%}.target-lock{bottom:20%;left:50%;transform:translateX(-50%);color:var(--cyan);white-space:nowrap}.lens-orbit{position:absolute;border:1px solid rgba(137,198,255,.12);border-radius:50%;animation:spin 35s linear infinite}.orbit-a{inset:2%}.orbit-b{inset:10%;border-style:dashed;animation-direction:reverse;animation-duration:48s}.orbit-a:after,.orbit-b:after{content:"";position:absolute;width:4px;height:4px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);top:20%;left:7%}.arc-copy{position:absolute;right:7%;bottom:17%;display:flex;flex-direction:column}.arc-copy small{font-size:8px;letter-spacing:.2em;color:var(--muted)}.arc-copy strong{font:300 24px "Space Grotesk"}.telemetry{position:absolute;right:4vw;bottom:45px;width:min(610px,55vw);min-height:72px;display:grid;grid-template-columns:repeat(4,1fr);padding:18px 20px}.telemetry>div{padding:0 17px;border-left:1px solid var(--line)}.telemetry>div:first-child{border:0}.telemetry small,.metrics small{display:block;font-size:7px;color:var(--muted);letter-spacing:.16em;margin-bottom:8px}.telemetry strong{font:500 12px "Space Grotesk";letter-spacing:.08em}.scroll-cue{position:absolute;left:3vw;bottom:45px;writing-mode:vertical-rl;font-size:7px;letter-spacing:.2em;color:#788396}.scroll-cue span{height:35px;width:1px;background:linear-gradient(var(--cyan),transparent);margin-bottom:10px}.section{padding:130px 7vw}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:50px}.section-head h2,.transmission h2{font:500 clamp(40px,5vw,76px)/1 "Space Grotesk";letter-spacing:-.04em;margin:12px 0}.section-head>p{max-width:380px;color:var(--muted);line-height:1.7;font-size:13px}.target-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.target-card{text-align:left;position:relative;min-height:390px;padding:25px;background:rgba(4,7,19,.87);border:0;cursor:pointer;overflow:hidden;display:flex;flex-direction:column;transition:.4s}.target-card:hover,.target-card.active{background:linear-gradient(155deg,hsla(var(--card-hue,192),70%,40%,.14),rgba(5,8,21,.95) 55%);transform:translateY(-7px);box-shadow:0 20px 60px rgba(0,0,0,.45)}.card-index{font:10px "Space Grotesk";color:#647084}.mini-orb{width:125px;height:125px;margin:40px auto 35px;border-radius:50%;box-shadow:inset -25px -12px 25px rgba(0,0,0,.75),0 0 35px currentColor;transition:.5s}.target-card:hover .mini-orb{transform:scale(1.08) rotate(12deg)}.orb-blue{color:#35c6f4;background:radial-gradient(circle at 35% 30%,#b6f5ff,#257fa1 28%,#071633 70%)}.orb-violet{color:#a75bff;background:radial-gradient(circle at 45% 40%,#ffe0ff,#a43be9 8%,#321268 35%,#050714 70%);filter:saturate(1.3)}.orb-gold{color:#e6bd68;background:radial-gradient(circle at 35% 30%,#fff4bf,#c9a34e 34%,#312110 70%)}.ringed:after{content:"";position:absolute;width:165px;height:37px;border:8px solid rgba(231,198,123,.5);border-left-color:rgba(255,255,255,.16);border-radius:50%;transform:translate(-21px,43px) rotate(-12deg)}.orb-rose{color:#ff5b94;background:radial-gradient(circle,#fff 0 2%,#ff7cac 4%,#8a194a 13%,#17091d 42%,#02030c 70%)}.card-type{font-size:7px;letter-spacing:.18em;color:var(--cyan);margin-bottom:10px}.target-card strong{font:500 24px "Space Grotesk"}.target-card small{font-size:11px;color:var(--muted);line-height:1.6;margin-top:9px}.target-card i{font-style:normal;font-size:8px;letter-spacing:.15em;color:#bac5d4;margin-top:auto}.transmission{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:9vw;min-height:850px}.transmission-visual{position:relative;min-height:560px;display:grid;place-items:center}.rings{width:min(37vw,480px);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;position:relative}.rings i{position:absolute;inset:12%;border:1px solid rgba(107,232,255,.19);border-radius:50%;animation:pulseRing 4s ease-out infinite}.rings i:nth-child(2){inset:24%;animation-delay:1s}.rings i:nth-child(3){inset:36%;animation-delay:2s}.rings i:nth-child(4){inset:44%;animation-delay:3s}.rings span{font-size:32px;color:var(--cyan);filter:drop-shadow(0 0 15px var(--cyan));animation:spin 12s linear infinite}.spectrum{position:absolute;bottom:0;left:5%;right:5%;height:50px;display:flex;align-items:center;gap:3px}.spectrum i{flex:1;height:var(--h);background:linear-gradient(transparent,var(--cyan));opacity:.6;animation:wave 1.2s ease-in-out infinite alternate;animation-delay:var(--d)}.transmission-copy>p:not(.kicker){color:#9da8b8;line-height:1.85;max-width:540px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin:42px 0}.metrics div{background:#040712;padding:20px}.metrics strong{font:300 26px "Space Grotesk";display:block;margin-bottom:9px}.text-link{font-size:9px;letter-spacing:.17em;border-bottom:1px solid var(--cyan);padding-bottom:8px}.text-link span{margin-left:18px;color:var(--cyan)}footer{border-top:1px solid var(--line);min-height:140px;margin:0 3vw;padding:42px 4vw;display:flex;align-items:center;justify-content:space-between;color:#687386;font-size:8px;letter-spacing:.1em}.footer-brand{color:white}.portal-overlay{position:fixed;z-index:50;inset:0;background:radial-gradient(circle,hsla(var(--hue),70%,25%,.35),#010107 60%);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.6s}.portal-overlay.open{opacity:1;pointer-events:auto}.portal-overlay>button{position:absolute;right:4vw;top:4vw;background:none;border:1px solid var(--line);width:44px;height:44px;font-size:24px;cursor:pointer}.portal-core{width:min(45vw,520px);aspect-ratio:1;border:1px solid var(--cyan);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 100px hsla(var(--hue),100%,60%,.2);animation:portalPulse 3s ease-in-out infinite}.portal-core:before,.portal-core:after{content:"";position:absolute;width:min(38vw,440px);aspect-ratio:1;border:1px dashed rgba(255,255,255,.25);border-radius:50%;animation:spin 14s linear infinite}.portal-core:after{width:min(28vw,320px);animation-direction:reverse}.portal-core span{width:8px;height:8px;background:white;box-shadow:0 0 30px 10px var(--cyan);border-radius:50%}.portal-overlay p{margin:30px 0 8px;font-size:8px;letter-spacing:.3em;color:var(--cyan)}.portal-overlay strong{font:300 34px "Space Grotesk"}.portal-overlay small{margin-top:10px;color:var(--muted)}.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}@keyframes spin{to{transform:rotate(360deg)}}@keyframes scan{0%,100%{top:10%;opacity:0}20%,80%{opacity:1}50%{top:90%}}@keyframes float{50%{transform:translateY(-9px) rotate(2deg)}}@keyframes pulse{50%{transform:scale(1.12);opacity:.5}}@keyframes pulseRing{0%{transform:scale(.75);opacity:0}45%{opacity:.7}100%{transform:scale(1.25);opacity:0}}@keyframes wave{to{height:8px;opacity:.25}}@keyframes portalPulse{50%{transform:scale(1.04);box-shadow:0 0 160px hsla(var(--hue),100%,60%,.32)}}
+@media(max-width:900px){.topbar nav{display:none}.hero{padding-top:130px;justify-content:flex-start}.hero h1{margin-top:18px}.hero-copy{max-width:65%}.lens-wrap{width:70vw;top:33%;right:-20vw;opacity:.82}.telemetry{left:7vw;right:7vw;width:auto;grid-template-columns:repeat(2,1fr);bottom:30px}.telemetry>div:nth-child(3){border-left:0;margin-top:14px}.section-head{align-items:start;flex-direction:column}.target-grid{grid-template-columns:repeat(2,1fr)}.transmission{grid-template-columns:1fr}.transmission-visual{order:2}.rings{width:75vw}.scroll-cue{display:none}}@media(max-width:560px){.topbar{left:14px;right:14px}.status-pill{font-size:0}.status-pill span{margin:0}.hero{padding:125px 22px 150px;min-height:900px}.hero h1{font-size:47px}.hero-copy{max-width:100%}.hero-actions{align-items:stretch;flex-direction:column;width:75%}.lens-wrap{width:95vw;top:46%;right:-39vw}.telemetry{left:18px;right:18px;padding:14px 8px}.section{padding:90px 22px}.target-grid{grid-template-columns:1fr}.target-card{min-height:365px}.transmission{gap:10px}.transmission-visual{min-height:460px}.rings{width:90vw}.metrics strong{font-size:19px}.metrics div{padding:15px 10px}footer{align-items:flex-start;gap:20px;flex-direction:column}.portal-core{width:82vw}.portal-core:before{width:70vw}.portal-core:after{width:56vw}}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+  </style>
+</head>
+<body>
+  <canvas id="cosmos" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="topbar glass">
+    <a class="brand" href="#top" aria-label="StarLens home">
+      <span class="brand-mark"><i></i><i></i></span>
+      <span>STAR<span>LENS</span></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#observatory">Observatory</a>
+      <a href="#signals">Signals</a>
+      <a href="#mission">Mission</a>
+    </nav>
+    <button class="status-pill" id="soundToggle" type="button" aria-pressed="false"><span></span> Soundscape off</button>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="observatory">
+      <div class="eyebrow reveal"><span></span> LIVE CELESTIAL INTERFACE · 14 SEP 2026</div>
+      <h1 class="reveal">SEE THE UNIVERSE<br><em>AS A LIVING LANGUAGE.</em></h1>
+      <p class="hero-copy reveal">Point beyond the visible. StarLens translates deep-sky data into light, motion and resonance—an immersive portal from Earth to the cosmic horizon.</p>
+      <div class="hero-actions reveal">
+        <button class="primary" id="enterLens" type="button">OPEN TARGET VIEW <span>↗</span></button>
+        <a class="ghost guided-link" href="#signals"><span class="play">↓</span> CHOOSE ANOTHER TARGET</a>
+      </div>
+
+      <div class="lens-wrap" aria-label="Interactive celestial lens">
+        <div class="lens-orbit orbit-a"></div><div class="lens-orbit orbit-b"></div>
+        <div class="lens" id="lens">
+          <div class="lens-grid"></div>
+          <div class="reticle"><span></span><span></span><b></b></div>
+          <div class="object-glow"></div>
+          <div class="planet" id="planet"><div class="planet-shade"></div></div>
+          <div class="scanline" aria-hidden="true"></div>
+          <div class="lens-label label-n">N · 000°</div>
+          <div class="lens-label label-e">AZ 083°</div>
+          <div class="lens-label label-s">ALT +41°</div>
+          <div class="target-lock">TARGET LOCKED</div>
+        </div>
+        <div class="arc-copy"><small>OPTICAL ARRAY</small><strong>76%</strong></div>
+      </div>
+
+      <aside class="telemetry glass reveal">
+        <div><small>ACTIVE TARGET</small><strong id="activeTarget">TRAPPIST-1e</strong></div>
+        <div><small>DISTANCE</small><strong id="activeDistance">40.7 LY</strong></div>
+        <div><small>LIGHT FREQUENCY</small><strong id="activeFrequency">528 HZ</strong></div>
+        <div><small>EARTH SIMILARITY</small><strong id="activeEsi">0.85</strong></div>
+      </aside>
+      <div class="target-controls glass reveal" aria-label="Target controls">
+        <button id="previousTarget" type="button" aria-label="Previous celestial target">←</button>
+        <div><small>VIEWING TARGET 1 OF 4</small><strong id="targetControlName">TRAPPIST-1e</strong></div>
+        <button id="nextTarget" type="button" aria-label="Next celestial target">→</button>
+        <a href="#signals">VIEW ALL TARGETS</a>
+      </div>
+
+      <div class="scroll-cue"><span></span> SCROLL TO DESCEND</div>
+    </section>
+
+    <section class="targets section" id="signals">
+      <div class="section-head reveal">
+        <div><p class="kicker">SIGNAL ARCHIVE / 01</p><h2>Choose your horizon.</h2></div>
+        <p>Each target carries a distinct spectral signature. Select a signal to retune the StarLens.</p>
+      </div>
+      <div class="target-grid">
+        <button class="target-card active reveal" data-name="TRAPPIST-1e" data-distance="40.7 LY" data-frequency="528 HZ" data-esi="0.85" data-hue="192" type="button">
+          <span class="card-index">01</span><span class="mini-orb orb-blue"></span><span class="card-type">EXOPLANET · AQUARIUS</span><strong>TRAPPIST-1e</strong><small>A temperate world in a seven-planet resonance.</small><i>OPEN SIGNAL ↗</i>
+        </button>
+        <button class="target-card reveal" data-name="ORION NEBULA" data-distance="1,344 LY" data-frequency="432 HZ" data-esi="—" data-hue="282" type="button">
+          <span class="card-index">02</span><span class="mini-orb orb-violet"></span><span class="card-type">STELLAR NURSERY · M42</span><strong>Orion Nebula</strong><small>A luminous furnace where young stars awaken.</small><i>OPEN SIGNAL ↗</i>
+        </button>
+        <button class="target-card reveal" data-name="SATURN" data-distance="1.29B KM" data-frequency="210 HZ" data-esi="0.12" data-hue="42" type="button">
+          <span class="card-index">03</span><span class="mini-orb orb-gold ringed"></span><span class="card-type">GAS GIANT · SOL</span><strong>Saturn</strong><small>Ice rings conducting a billion quiet collisions.</small><i>OPEN SIGNAL ↗</i>
+        </button>
+        <button class="target-card reveal" data-name="CRAB PULSAR" data-distance="6,500 LY" data-frequency="30 HZ" data-esi="—" data-hue="336" type="button">
+          <span class="card-index">04</span><span class="mini-orb orb-rose"></span><span class="card-type">NEUTRON STAR · M1</span><strong>Crab Pulsar</strong><small>A cosmic lighthouse beating thirty times a second.</small><i>OPEN SIGNAL ↗</i>
+        </button>
+      </div>
+    </section>
+
+    <section class="transmission section" id="mission">
+      <div class="transmission-visual reveal">
+        <div class="rings"><i></i><i></i><i></i><i></i><span>◈</span></div>
+        <div class="spectrum" id="spectrum"></div>
+      </div>
+      <div class="transmission-copy reveal">
+        <p class="kicker">LIGHT LANGUAGE / 02</p>
+        <h2>Data becomes<br><em>resonance.</em></h2>
+        <p>StarLens layers astronomical coordinates, cultural sky knowledge, habitability data and numerical astrophysics into one navigable field. It is less a map than an instrument for attention.</p>
+        <div class="metrics"><div><strong>37</strong><small>CELESTIAL PORTALS</small></div><div><strong>36</strong><small>LIGHT LANGUAGES</small></div><div><strong>360°</strong><small>SKY NAVIGATION</small></div></div>
+        <a class="text-link" href="https://stargazer-light-language-portal.onrender.com">LAUNCH ORIGINAL ASTROPORTAL <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark"><i></i><i></i></span><span>STAR<span>LENS</span></span></div>
+    <p>A cinematic celestial interface by Dr. Bheemaiah Anil K · Wilderness Dojo</p>
+    <p>EARTH STATION · 31.6° N</p>
+  </footer>
+
+  <div class="portal-overlay" id="portal" aria-hidden="true">
+    <button id="closePortal" aria-label="Close lens">×</button>
+    <div class="portal-core"><span></span></div>
+    <p>TARGET VIEW · READY</p><strong id="portalTarget">TRAPPIST-1e</strong>
+    <div class="portal-data"><span id="portalDistance">40.7 LY</span><span id="portalFrequency">528 HZ</span><span id="portalEsi">ESI 0.85</span></div>
+    <small class="touch-instruction">Touch and drag anywhere to move the lens</small>
+    <div class="portal-actions"><button id="portalPrevious" type="button">← PREVIOUS</button><button id="portalNext" type="button">NEXT →</button><button id="returnPortal" type="button">RETURN TO PAGE</button></div>
+  </div>
+  <style>
+    /* Calm-by-default signal display: no flashing scanline or pulsing glow. */
+    .scanline{display:none}
+    .object-glow{animation:none;opacity:.62}
+    .target-lock{padding:6px 9px;border:1px solid rgba(107,232,255,.28);background:rgba(2,8,18,.72)}
+    .target-controls{position:absolute;right:4vw;bottom:128px;width:min(610px,55vw);height:58px;display:grid;grid-template-columns:48px 1fr 48px 150px;align-items:center;z-index:5}
+    .target-controls button{height:100%;border:0;border-right:1px solid var(--line);background:transparent;cursor:pointer;font-size:18px;transition:.2s}
+    .target-controls button:hover,.target-controls button:focus-visible{background:rgba(107,232,255,.1);color:var(--cyan);outline:1px solid var(--cyan);outline-offset:-2px}
+    .target-controls>div{padding:0 16px}.target-controls small{display:block;font-size:7px;letter-spacing:.17em;color:var(--muted);margin-bottom:5px}.target-controls strong{font:500 12px "Space Grotesk";letter-spacing:.08em}
+    .target-controls a{height:100%;display:grid;place-items:center;border-left:1px solid var(--line);font-size:7px;letter-spacing:.13em;color:var(--cyan)}
+    .target-card:focus-visible{outline:2px solid var(--cyan);outline-offset:-3px}.target-card.active:after{content:"CURRENT TARGET";position:absolute;top:22px;right:20px;color:var(--cyan);font-size:7px;letter-spacing:.14em}
+    .selection-note{position:fixed;left:50%;bottom:24px;z-index:60;transform:translate(-50%,20px);padding:12px 18px;background:#eefbff;color:#05111a;font-size:9px;letter-spacing:.12em;opacity:0;pointer-events:none;transition:.25s}.selection-note.show{opacity:1;transform:translate(-50%,0)}
+    .guided-link{display:inline-flex;align-items:center;justify-content:center}.portal-overlay{touch-action:none}.portal-overlay .portal-core{transition:transform .12s ease-out}.portal-data{display:flex;gap:8px;margin-top:16px}.portal-data span{padding:7px 10px;border:1px solid var(--line);font-size:8px;letter-spacing:.12em;color:#cfefff;background:rgba(3,8,20,.55)}.touch-instruction{margin-top:15px!important;color:#c3ccda!important;font-size:10px}.portal-actions{display:flex;gap:8px;margin-top:22px}.portal-actions button{position:static!important;width:auto!important;height:42px!important;padding:0 16px;background:rgba(8,14,30,.8)!important;border:1px solid var(--line)!important;font-size:8px!important;letter-spacing:.12em;cursor:pointer}.portal-actions button:hover,.portal-actions button:focus-visible{border-color:var(--cyan)!important;color:var(--cyan);outline:none}
+    @media(max-width:900px){.target-controls{left:7vw;right:7vw;width:auto;bottom:150px}.telemetry{bottom:35px}}
+    @media(max-width:560px){.hero{padding-bottom:240px;min-height:980px}.target-controls{left:18px;right:18px;bottom:170px;grid-template-columns:42px 1fr 42px}.target-controls a{display:none}.telemetry{bottom:28px}.lens-wrap{top:43%}.portal-actions{display:grid;grid-template-columns:1fr 1fr;width:calc(100% - 36px)}.portal-actions #returnPortal{grid-column:1/-1}.portal-data{gap:4px}.portal-core{width:70vw}.touch-instruction{font-size:11px}}
+  </style>
+  <div class="selection-note" id="selectionNote" role="status" aria-live="polite"></div>
+  <script>
+const canvas=document.querySelector('#cosmos'),ctx=canvas.getContext('2d');let stars=[],w,h,pointer={x:.5,y:.5};
+function resize(){w=canvas.width=innerWidth*devicePixelRatio;h=canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';stars=Array.from({length:Math.min(900,Math.floor(innerWidth*innerHeight/1100))},()=>({x:Math.random()*w,y:Math.random()*h,z:Math.random(),r:Math.random()*1.3+.15,t:Math.random()*6.28}))}
+function draw(){ctx.clearRect(0,0,w,h);const px=(pointer.x-.5)*18*devicePixelRatio,py=(pointer.y-.5)*12*devicePixelRatio;for(const s of stars){const alpha=.28+s.z*.58;ctx.beginPath();ctx.fillStyle=`rgba(${180+s.z*75},${205+s.z*45},255,${alpha})`;ctx.arc(s.x+px*s.z,s.y+py*s.z,s.r*devicePixelRatio*(.4+s.z),0,Math.PI*2);ctx.fill()}requestAnimationFrame(draw)}
+addEventListener('resize',resize);addEventListener('pointermove',e=>{pointer.x=e.clientX/innerWidth;pointer.y=e.clientY/innerHeight;document.querySelector('#lens').style.transform=`perspective(900px) rotateX(${(pointer.y-.5)*-5}deg) rotateY(${(pointer.x-.5)*7}deg)`});resize();requestAnimationFrame(draw);
+const reveals=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.14});document.querySelectorAll('.reveal').forEach(e=>reveals.observe(e));
+const cards=[...document.querySelectorAll('.target-card')],root=document.documentElement;let activeIndex=0,noteTimer;
+function selectTarget(index,announce=false){activeIndex=(index+cards.length)%cards.length;const card=cards[activeIndex];cards.forEach((c,i)=>{c.classList.toggle('active',i===activeIndex);c.setAttribute('aria-pressed',String(i===activeIndex))});root.style.setProperty('--hue',card.dataset.hue);document.querySelector('#activeTarget').textContent=card.dataset.name;document.querySelector('#activeDistance').textContent=card.dataset.distance;document.querySelector('#activeFrequency').textContent=card.dataset.frequency;document.querySelector('#activeEsi').textContent=card.dataset.esi;document.querySelector('#portalTarget').textContent=card.dataset.name;document.querySelector('#portalDistance').textContent=card.dataset.distance;document.querySelector('#portalFrequency').textContent=card.dataset.frequency;document.querySelector('#portalEsi').textContent=`ESI ${card.dataset.esi}`;document.querySelector('#targetControlName').textContent=card.dataset.name;document.querySelector('.target-controls small').textContent=`VIEWING TARGET ${activeIndex+1} OF ${cards.length}`;document.querySelector('#planet').style.filter=`hue-rotate(${Number(card.dataset.hue)-192}deg)`;if(announce){const note=document.querySelector('#selectionNote');note.textContent=`STARLENS RETUNED TO ${card.dataset.name}`;note.classList.add('show');clearTimeout(noteTimer);noteTimer=setTimeout(()=>note.classList.remove('show'),1800)}}
+cards.forEach((card,i)=>{card.style.setProperty('--card-hue',card.dataset.hue);card.setAttribute('aria-pressed',String(i===0));card.addEventListener('click',()=>selectTarget(i,true))});document.querySelector('#previousTarget').addEventListener('click',()=>selectTarget(activeIndex-1,true));document.querySelector('#nextTarget').addEventListener('click',()=>selectTarget(activeIndex+1,true));
+const spectrum=document.querySelector('#spectrum');for(let i=0;i<72;i++){const b=document.createElement('i');b.style.setProperty('--h',`${12+Math.random()*38}px`);b.style.setProperty('--d',`${-Math.random()*1.2}s`);spectrum.appendChild(b)}
+const portal=document.querySelector('#portal'),portalCore=portal.querySelector('.portal-core');function openPortal(){portal.classList.add('open');portal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';portalCore.style.transform='translate(0,0)'}function closePortal(){portal.classList.remove('open');portal.setAttribute('aria-hidden','true');document.body.style.overflow='';portalCore.style.transform='translate(0,0)'}document.querySelector('#enterLens').addEventListener('click',openPortal);document.querySelector('#closePortal').addEventListener('click',closePortal);document.querySelector('#returnPortal').addEventListener('click',closePortal);document.querySelector('#portalPrevious').addEventListener('click',e=>{e.stopPropagation();selectTarget(activeIndex-1)});document.querySelector('#portalNext').addEventListener('click',e=>{e.stopPropagation();selectTarget(activeIndex+1)});let dragging=false;portal.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;dragging=true;portal.setPointerCapture?.(e.pointerId)});portal.addEventListener('pointermove',e=>{if(!dragging)return;const x=(e.clientX/innerWidth-.5)*70,y=(e.clientY/innerHeight-.5)*50;portalCore.style.transform=`translate(${x}px,${y}px)`});portal.addEventListener('pointerup',()=>dragging=false);portal.addEventListener('pointercancel',()=>dragging=false);addEventListener('keydown',e=>{if(e.key==='Escape')closePortal();if(portal.classList.contains('open')&&e.key==='ArrowLeft')selectTarget(activeIndex-1);if(portal.classList.contains('open')&&e.key==='ArrowRight')selectTarget(activeIndex+1)});
+let audio;document.querySelector('#soundToggle').addEventListener('click',e=>{const b=e.currentTarget,on=b.getAttribute('aria-pressed')==='true';b.setAttribute('aria-pressed',String(!on));b.lastChild.textContent=!on?' Soundscape on':' Soundscape off';if(!on){audio=new (window.AudioContext||window.webkitAudioContext)();const osc=audio.createOscillator(),gain=audio.createGain();osc.type='sine';osc.frequency.value=108;gain.gain.value=.018;osc.connect(gain).connect(audio.destination);osc.start();b._osc=osc}else{b._osc?.stop();audio?.close()}});
+
+  </script>
+</body>
+</html>
