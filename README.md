@@ -4,10 +4,10 @@
 
 [![Website](https://img.shields.io/badge/Website-wildernessdojo.github.io-C6F65C?style=for-the-badge&logo=github)](https://wildernessdojo.github.io/)
 [![FloraMedica](https://img.shields.io/badge/FloraMedica-Plant_AI-55B87A?style=for-the-badge)](https://floramedica.github.io/)
-[![SPARROW ARU](https://img.shields.io/badge/SPARROW-ARU_Dojo-79E7DF?style=for-the-badge)](https://wildernessdojo.github.io/ARU%20Dojo.html)
+[![SPARROW ARU](https://img.shields.io/badge/SPARROW-ARU_Dojo-79E7DF?style=for-the-badge)](https://wildernessdojo.github.io/ARUDojo.html)
 [![Slack](https://img.shields.io/badge/Community-Slack-4A154B?style=for-the-badge&logo=slack)](https://coderdojostpaul2group.slack.com/)
 
-Wilderness Dojo is an open learning space for building and testing technology that helps people observe, understand, and care for wild environments. The site brings together biodiversity AI, automatic recording units, plant identification, field sensing, astronomy, and practical outdoor experimentation.
+Wilderness Dojo is an open learning space for building and testing technology that helps people observe, understand, and care for wild environments. The site brings together biodiversity AI, autom[...]
 
 > Listen carefully. Observe responsibly. Build for the field.
 
@@ -17,7 +17,7 @@ Wilderness Dojo is an open learning space for building and testing technology th
 | --- | --- | --- |
 | **StarLens** | A visual portal for observing sky, signal, and place. | [Launch StarLens](https://wildernessdojo.github.io/StarLens/index-13.html) |
 | **FloraMedica** | Offline-first plant identification with ethnobotanical knowledge. | [Open FloraMedica](https://floramedica.github.io/) |
-| **Microsoft SPARROW ARU Dojo** | A workshop on ONNX, MegaDetector, bioacoustics, PyTorch-Wildlife, and human-reviewed wildlife observations. | [Enter the ARU Dojo](https://wildernessdojo.github.io/ARU%20Dojo.html) |
+| **Microsoft SPARROW ARU Dojo** | A workshop on ONNX, MegaDetector, bioacoustics, PyTorch-Wildlife, and human-reviewed wildlife observations. | [Enter the ARU Dojo](https://wildernessdojo.github.io/ARUDojo.html) |
 | **ONNX Studio demo** | Inspect neural-network graphs and follow the wildlife inference workflow. | [Launch the Render app](https://gharial-ispa-rlhf.onrender.com/) |
 | **Gharial ISPA RLHF** | Source code, model registry, TinyML work, and the experimental human-feedback layer used by the ARU workshop. | [View repository](https://github.com/stpaul2coderdojo/Gharial-ispa-RLHF) |
 
@@ -69,16 +69,11 @@ Then open `http://localhost:8000` in a browser.
 
 ```text
 index.html
-ARU Dojo.html
+ARUDojo.html
 StarLens/
 └── index-13.html
 ```
 
-When linking to a filename containing a space, use URL encoding:
-
-```html
-<a href="ARU%20Dojo.html">Open the ARU Dojo</a>
-```
 
 ## Workshop prerequisites
 
@@ -103,7 +98,7 @@ Wildlife observations are evidence, not just model inputs.
 
 ## Contributing
 
-Contributions that improve accessibility, field reliability, documentation, worksheets, model transparency, or conservation value are welcome.
+Contributions that improve accessibility, field reliability, documentation, worksheets, references, or conservation value are welcome.
 
 1. Fork the repository.
 2. Create a focused branch.
@@ -121,7 +116,7 @@ Please do not commit secrets, private location data, raw human recordings, large
 
 ## Attribution
 
-Microsoft SPARROW, MegaDetector, MegaDetector Acoustic, MegaDetector Classifier, and PyTorch-Wildlife are upstream open-source projects maintained by Microsoft and their contributors. Wilderness Dojo and the Gharial ISPA RLHF workshop layer are independent educational and experimental work; references to Microsoft projects do not imply endorsement.
+Microsoft SPARROW, MegaDetector, MegaDetector Acoustic, MegaDetector Classifier, and PyTorch-Wildlife are upstream open-source projects maintained by Microsoft and their contributors. Wilderness [...]
 
 Review each upstream repository's current licence, model card, citation guidance, and deployment requirements before redistribution or operational use.
 
